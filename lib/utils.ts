@@ -5,8 +5,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-// Gemini AI image generation utility
-// WARNING: For production, do NOT expose your API key in the client. Proxy this through a backend.
 export async function generateGeminiImage(prompt: string): Promise<string | null> {
   try {
     const response = await fetch(
@@ -22,8 +20,6 @@ export async function generateGeminiImage(prompt: string): Promise<string | null
     )
     if (!response.ok) return null
     const data = await response.json()
-    // Gemini returns base64 image or URL depending on config; adjust as needed
-    // For now, assume the response contains a base64 image string in data.candidates[0].content.parts[0].inlineData.data
     const base64 = data?.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data
     if (base64) {
       return `data:image/png;base64,${base64}`

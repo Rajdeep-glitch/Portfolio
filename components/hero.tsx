@@ -22,8 +22,11 @@ export default function Hero() {
         <h2 className="text-2xl md:text-3xl font-medium text-muted-foreground mb-4">
           Full Stack Developer & AI Enthusiast
         </h2>
-        <p className="text-lg text-muted-foreground/80 max-w-2xl mx-auto mb-8">
-          Building intelligent web applications with modern technologies and AI integration
+        <p className="text-lg text-muted-foreground/80 max-w-2xl mx-auto mb-4">
+          I’m a passionate full stack developer and AI enthusiast, driven by curiosity and a love for building impactful digital solutions. I thrive in collaborative environments and enjoy turning complex problems into elegant, user-friendly products. Currently seeking opportunities to innovate and grow with world-class teams.
+        </p>
+        <p className="text-base text-muted-foreground/70 max-w-2xl mx-auto mb-8">
+          Building intelligent web applications with modern technologies and AI integration.
         </p>
 
         <motion.div
@@ -47,6 +50,12 @@ export default function Hero() {
           <Button asChild variant="outline" size="lg" className="rounded-full">
             <a href="https://www.linkedin.com/in/rajdeep-roy-243977290/" target="_blank" rel="noopener noreferrer">
               <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
+            </a>
+          </Button>
+
+          <Button asChild variant="outline" size="lg" className="rounded-full">
+            <a href="/resume.pdf" download>
+              Download Resume
             </a>
           </Button>
         </motion.div>

@@ -1,7 +1,5 @@
 import { NextResponse } from 'next/server';
 
-// This is a secure way to handle API requests
-// The API key is stored on the server and not exposed to the client
 export async function POST(request: Request) {
   try {
     const { prompt } = await request.json();
@@ -13,11 +11,6 @@ export async function POST(request: Request) {
       );
     }
     
-    // In a real implementation, you would use the API key here
-    // const apiKey = process.env.GOOGLE_API_KEY;
-    
-    // For now, we'll return a mock response
-    // This simulates what would happen with a real AI API call
     const mockResponse = {
       recommendation: {
         title: "AI-Enhanced Portfolio Analyzer",

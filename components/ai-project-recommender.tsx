@@ -195,7 +195,6 @@ This project would showcase your skills in modern development while incorporatin
                       __html: recommendation
                         .replace(/\n\n/g, '<br/><br/>')
                         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                        .replace(/## (.*?)(\n|$)/g, '<h3>$1</h3>')
                         .replace(/- (.*?)(\n|$)/g, '<li>$1</li>')
                     }} />
                   </div>

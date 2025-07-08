@@ -32,14 +32,12 @@ interface GitHubStats {
 
 const COLORS = ["#8b5cf6", "#6366f1", "#ec4899", "#f43f5e", "#f97316", "#10b981"]
 
-// GitHub API endpoints
 const GITHUB_API = {
   USER: "https://api.github.com/users/Rajdeep-glitch",
   REPOS: "https://api.github.com/users/Rajdeep-glitch/repos",
   COMMITS: "https://api.github.com/users/Rajdeep-glitch/events",
 }
 
-// Language colors mapping
 const LANGUAGE_COLORS: { [key: string]: string } = {
   JavaScript: "#f7df1e",
   TypeScript: "#3178c6",
@@ -59,40 +57,29 @@ export default function MetricsDashboard() {
     const fetchGitHubData = async () => {
       try {
         setLoading(true)
-        
-        // Fetch user and repos data
         const [userResponse, reposResponse] = await Promise.all([
           fetch(GITHUB_API.USER),
           fetch(GITHUB_API.REPOS),
         ])
-
         if (!userResponse.ok || !reposResponse.ok) {
           throw new Error("Failed to fetch GitHub data")
         }
-
         const userData = await userResponse.json()
         const reposData = await reposResponse.json()
-
-        // Calculate stats
         const totalStars = reposData.reduce((acc: number, repo: any) => acc + repo.stargazers_count, 0)
         const totalForks = reposData.reduce((acc: number, repo: any) => acc + repo.forks_count, 0)
         const totalRepos = reposData.length
-
-        // Calculate language stats
         const languageMap = new Map<string, number>()
         reposData.forEach((repo: any) => {
           if (repo.language) {
             languageMap.set(repo.language, (languageMap.get(repo.language) || 0) + 1)
           }
         })
-
         const languageStats = Array.from(languageMap.entries()).map(([name, value]) => ({
           name,
           value,
           color: LANGUAGE_COLORS[name] || "#888888",
         }))
-
-        // Get repo sizes
         const repoSizes = reposData
           .slice(0, 5)
           .map((repo: any) => ({
@@ -100,18 +87,15 @@ export default function MetricsDashboard() {
             size: repo.size,
           }))
           .sort((a: any, b: any) => b.size - a.size)
-
-        // Mock commit activity for now (GitHub API has rate limits for detailed commit data)
         const commitActivity = Array.from({ length: 12 }, (_, i) => ({
           name: new Date(2024, i).toLocaleString('default', { month: 'short' }),
           commits: Math.floor(Math.random() * 100) + 20,
         }))
-
         setStats({
           totalStars,
           totalForks,
           totalRepos,
-          totalCommits: userData.public_repos * 50, // Approximate
+          totalCommits: userData.public_repos * 50,
           languageStats,
           commitActivity,
           repoSizes,
@@ -122,7 +106,6 @@ export default function MetricsDashboard() {
         setLoading(false)
       }
     }
-
     fetchGitHubData()
   }, [])
 
@@ -138,7 +121,6 @@ export default function MetricsDashboard() {
     return null
   }
 
-  // Accessibility improvements for chart containers
   const ChartContainer = ({ children, title, description }: { children: React.ReactNode; title: string; description: string }) => (
     <div 
       role="figure" 

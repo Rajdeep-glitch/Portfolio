@@ -36,7 +36,6 @@ export default function Projects() {
         }
         const data = await response.json()
 
-        // Filter out forked repositories, "Rajdeep-glitch" and "Portfolio" repositories, and sort by most recently updated
         const filteredProjects = data
           .filter((repo: Repository) => 
             !repo.fork && 
@@ -44,10 +43,8 @@ export default function Projects() {
             repo.name.toLowerCase() !== "portfolio"
           )
           .sort((a: Repository, b: Repository) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime())
-          .slice(0, 6) // Get top 6 projects
-
+          .slice(0, 6)
         setProjects(filteredProjects)
-        // Generate images for each project
         filteredProjects.forEach(async (project: Repository) => {
           const prompt = `Generate a modern, clean, and creative project cover image for a GitHub project named '${project.name.replace(/-/g, ' ')}'. Description: ${project.description || 'No description provided.'}`
           const img = await generateGeminiImage(prompt)
@@ -60,7 +57,6 @@ export default function Projects() {
         setLoading(false)
       }
     }
-
     fetchProjects()
   }, [])
 
@@ -152,6 +148,14 @@ export default function Projects() {
                           </Badge>
                         ))}
                     </div>
+                    <div className="mt-4">
+                      <h4 className="font-semibold text-sm mb-1 text-purple-600">Highlights</h4>
+                      <ul className="list-disc list-inside text-xs text-muted-foreground space-y-1">
+                        <li>Key achievement or impact (customize in your repo description or here)</li>
+                        <li>Teamwork, open source, or collaboration (if applicable)</li>
+                        <li>Live demo or user results (if available)</li>
+                      </ul>
+                    </div>
                   </CardContent>
                   <CardFooter className="flex gap-2">
                     <Button asChild variant="outline" size="sm" className="flex-1">
@@ -160,7 +164,7 @@ export default function Projects() {
                       </a>
                     </Button>
                     {project.homepage && (
-                      <Button asChild size="sm" className="flex-1">
+                      <Button asChild size="sm" className="flex-1 bg-purple-100 text-purple-700 border-purple-300 hover:bg-purple-200">
                         <a href={project.homepage} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="mr-2 h-4 w-4" /> Demo
                         </a>

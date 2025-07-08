@@ -8,10 +8,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Progress } from "@/components/ui/progress"
 import { Brain, Code, Database, Layout, Server, Sparkles, Loader2 } from "lucide-react"
 
-// This is a simulated AI skill analysis component
-// In a real implementation, this would connect to a backend service
-// that processes your GitHub repositories and analyzes your skills
-
 const skillCategories = [
   {
     id: "frontend",
@@ -96,7 +92,7 @@ const marketInsights = [
 export default function AISkillAnalyzer() {
   const [activeTab, setActiveTab] = useState("frontend")
   const [isAnalyzing, setIsAnalyzing] = useState(false)
-  const [isAnalyzed, setIsAnalyzed] = useState(true) // Set to true to show data immediately
+  const [isAnalyzed, setIsAnalyzed] = useState(true)
 
   const handleAnalyze = () => {
     setIsAnalyzing(true)
