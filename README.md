@@ -1,81 +1,84 @@
-<h1 align="center">✨ Welcome to My Creative Portfolio! ✨</h1>
+# Rajdeep Roy - AI-Enhanced Portfolio
 
 <p align="center">
-  <img src="https://media.giphy.com/media/xT0GqF9CMEgPE5gU7e/giphy.gif" width="200" alt="Rocket Launch Sticker" />
+  <img src="https://media.giphy.com/media/xT0GqF9CMEgPE5gU7e/giphy.gif" width="200" alt="Rocket Launch" />
 </p>
 
 <p align="center">
-  <b>🚀 Built with passion, pixels, and a pinch of madness!</b>
-</p>
-
----
-
-## 👨‍💻 About Me
-
-Hey there! I'm **Rajdeep** a.k.a. `@Rajdeep-glitch` — a developer who believes **code is poetry** 🧠💻.  
-This portfolio is my digital playground where I experiment, build, and showcase all things awesome.
-
-> ⚡ Fun Fact: I debug more bugs than I eat cookies 🍪🐞
-
----
-
-## 🧩 What's Inside?
-
-🔸 A sleek and modern **portfolio website**  
-🔸 Projects that scream creativity 😎  
-🔸 Smooth scrolls, animated elements & responsive design  
-🔸 All powered by **React, Next.js, Tailwind, and Vite**  
-🔸 **Secret ingredient**: Love & Coffee ☕❤️
-
----
-
-## 🛠 Tech Stack
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=html,css,js,react,nextjs,tailwind,nodejs,figma,github,vscode" />
+  <b>🚀 Full Stack Developer & AI Enthusiast</b>
 </p>
 
 ---
 
-## 📸 Sneak Peek
+## 👨‍💻 About This Portfolio
 
-<p align="center">
-  <img src="https://media.giphy.com/media/l3vRnUQTu0U5VFzzy/giphy.gif" width="300" alt="Typing Code Sticker" />
-</p>
+Welcome to my professional portfolio! I'm **Rajdeep Roy**, a developer specializing in full-stack development with a focus on AI integration. This portfolio showcases my projects, skills, and experience in building intelligent web applications.
 
-> Here's a snapshot of what the magic looks like in motion ✨  
-> Want to see it live? 👉 [Insert your live site link here]
+## 🧩 Key Features
 
----
+- **AI-Powered Components**: Interactive AI skill analyzer and project recommender
+- **Dynamic GitHub Integration**: Automatically displays my latest projects
+- **Responsive Design**: Optimized for all devices
+- **Modern UI/UX**: Built with Next.js, Tailwind CSS, and Framer Motion
+- **Performance Optimized**: Fast loading and smooth animations
 
-## 🌈 Want to Collaborate?
+## 🛠️ Technologies Used
 
-Got an idea? Want to spice up your portfolio too?  
-**Let’s connect, build and break things (responsibly):**
+- **Frontend**: React, Next.js, TypeScript, Tailwind CSS, Framer Motion
+- **AI Integration**: TensorFlow.js, Google AI APIs
+- **State Management**: React Hooks and Context API
+- **API Integration**: GitHub API, RESTful services
+- **Deployment**: Vercel/Netlify
 
-- 💌 rajdeep.contact@example.com  
-- 🌐 [LinkedIn](https://linkedin.com/in/yourprofile)  
-- 🐙 [GitHub](https://github.com/Rajdeep-glitch)
+## 🤖 AI Features
 
----
+This portfolio includes several AI-enhanced features:
 
-## 💾 How to Run Locally
+1. **AI Skill Analyzer**: Visualizes my development skills with AI-generated insights based on GitHub repositories
+2. **AI Project Recommender**: Suggests personalized project ideas based on interests and current industry trends
+3. **Secure API Integration**: Implements best practices for handling API keys and sensitive data
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 16.x or higher
+- npm or yarn
+
+### Installation
 
 ```bash
-git clone https://github.com/Rajdeep-glitch/Portfolio.git
-cd Portfolio
+# Clone the repository
+git clone https://github.com/Rajdeep-glitch/portfolio.git
+
+# Navigate to the project directory
+cd portfolio
+
+# Install dependencies
 npm install
+
+# Create a .env.local file with your API keys (if needed)
+# Example:
+# GOOGLE_API_KEY=your_api_key_here
+
+# Start the development server
 npm run dev
-🧪 Tested on Chrome, Firefox, Brave & time travel machines 🕒🚀
+```
 
-⭐ Show Some Love
-If you like this portfolio, don’t forget to...
+The application will be available at `http://localhost:3000`
 
-<p align="center"> <img src="https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif" width="100" alt="Heart Sticker" /><br/> ⭐ Star the repo<br/> 🐦 Share with friends<br/> 🙌 Fork & build your version! </p>
-🧙‍♂️ Magic Behind the Scenes
-This project was built pixel-by-pixel, bug-by-bug, coffee-by-coffee.
-If you look close enough, you’ll find Easter eggs and little bits of personality scattered throughout.
+## 📱 Contact
 
-“Stay hungry, stay curious, and always code like it’s your first time.” 💡
+- **Email**: [royraj83368@gmail.com](mailto:royraj83368@gmail.com)
+- **GitHub**: [github.com/Rajdeep-glitch](https://github.com/Rajdeep-glitch)
+- **LinkedIn**: [linkedin.com/in/rajdeep-roy-243977290](https://www.linkedin.com/in/rajdeep-roy-243977290/)
 
-<p align="center"> <img src="https://media.giphy.com/media/QvBoMEcQ7DQXK/giphy.gif" width="200" alt="Goodbye Sticker" /> <br/><b>Thanks for stopping by — you’re awesome! 💜</b> </p> ```
+## 🔒 Security Note
+
+This project implements secure handling of API keys through environment variables and server-side API routes. The `.env.local` file should never be committed to version control.
+
+---
+
+<p align="center">
+  <b>Thank you for visiting my portfolio!</b>
+</p>

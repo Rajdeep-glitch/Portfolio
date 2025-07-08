@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Github, Loader2, ArrowRight } from "lucide-react"
 import Image from "next/image"
+import { generateGeminiImage } from "@/lib/utils"
 
 interface Repository {
   id: number
@@ -16,12 +17,15 @@ interface Repository {
   homepage: string
   topics: string[]
   language: string
+  fork: boolean
+  updated_at: string
 }
 
 export default function Projects() {
   const [projects, setProjects] = useState<Repository[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState("")
+  const [images, setImages] = useState<{ [id: number]: string | null }>({})
 
   useEffect(() => {
     async function fetchProjects() {
@@ -32,13 +36,23 @@ export default function Projects() {
         }
         const data = await response.json()
 
-        // Filter out forked repositories and sort by most recently updated
+        // Filter out forked repositories, "Rajdeep-glitch" and "Portfolio" repositories, and sort by most recently updated
         const filteredProjects = data
-          .filter((repo: Repository) => !repo.fork)
+          .filter((repo: Repository) => 
+            !repo.fork && 
+            repo.name.toLowerCase() !== "rajdeep-glitch" && 
+            repo.name.toLowerCase() !== "portfolio"
+          )
           .sort((a: Repository, b: Repository) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime())
           .slice(0, 6) // Get top 6 projects
 
         setProjects(filteredProjects)
+        // Generate images for each project
+        filteredProjects.forEach(async (project: Repository) => {
+          const prompt = `Generate a modern, clean, and creative project cover image for a GitHub project named '${project.name.replace(/-/g, ' ')}'. Description: ${project.description || 'No description provided.'}`
+          const img = await generateGeminiImage(prompt)
+          setImages(prev => ({ ...prev, [project.id]: img }))
+        })
       } catch (err) {
         setError("Failed to load projects. Please try again later.")
         console.error(err)
@@ -111,12 +125,21 @@ export default function Projects() {
                   </CardHeader>
                   <CardContent className="flex-grow">
                     <div className="h-40 relative mb-4 rounded-md overflow-hidden">
-                      <Image
-                        src={`/placeholder.svg?height=160&width=320&text=${encodeURIComponent(project.name)}`}
-                        alt={project.name}
-                        fill
-                        className="object-cover"
-                      />
+                      {images[project.id] ? (
+                        <Image
+                          src={images[project.id]!}
+                          alt={project.name}
+                          fill
+                          className="object-cover"
+                        />
+                      ) : (
+                        <Image
+                          src={`/placeholder.svg?height=160&width=320&text=${encodeURIComponent(project.name)}`}
+                          alt={project.name}
+                          fill
+                          className="object-cover"
+                        />
+                      )}
                     </div>
                     <p className="text-sm line-clamp-3">
                       {project.description || `A ${project.language} project named ${project.name.replace(/-/g, " ")}`}

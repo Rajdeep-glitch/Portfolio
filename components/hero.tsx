@@ -19,9 +19,12 @@ export default function Hero() {
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
           Hi, I&apos;m <span className="text-purple-500">Rajdeep</span>
         </h1>
-        <h2 className="text-2xl md:text-3xl font-medium text-muted-foreground mb-8">
-          Full Stack Developer & Computer Science Student
+        <h2 className="text-2xl md:text-3xl font-medium text-muted-foreground mb-4">
+          Full Stack Developer & AI Enthusiast
         </h2>
+        <p className="text-lg text-muted-foreground/80 max-w-2xl mx-auto mb-8">
+          Building intelligent web applications with modern technologies and AI integration
+        </p>
 
         <motion.div
           initial={{ opacity: 0 }}

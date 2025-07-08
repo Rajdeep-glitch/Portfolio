@@ -2,18 +2,23 @@
 
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
-import { Code2, Database, Globe, Layout, Server, GitBranch } from "lucide-react"
+import { Code2, Database, Globe, Layout, Server, GitBranch, Brain, Sparkles } from "lucide-react"
 
 const skills = [
   {
     category: "Frontend",
     icon: <Layout className="h-6 w-6" />,
-    items: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Tailwind CSS"],
+    items: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Tailwind CSS", "Framer Motion"],
   },
   {
     category: "Backend",
     icon: <Server className="h-6 w-6" />,
-    items: ["Node.js", "Express", "MongoDB", "Firebase"],
+    items: ["Node.js", "Express", "MongoDB", "Firebase", "RESTful APIs", "GraphQL"],
+  },
+  {
+    category: "AI & Machine Learning",
+    icon: <Brain className="h-6 w-6" />,
+    items: ["TensorFlow.js", "ML Integration", "Data Visualization", "Predictive Models", "Google AI APIs"],
   },
   {
     category: "Programming Languages",
@@ -23,17 +28,22 @@ const skills = [
   {
     category: "Databases",
     icon: <Database className="h-6 w-6" />,
-    items: ["MongoDB", "MySQL", "PostgreSQL", "Firebase"],
+    items: ["MongoDB", "MySQL", "PostgreSQL", "Firebase", "Data Modeling"],
   },
   {
     category: "DevOps & Tools",
     icon: <GitBranch className="h-6 w-6" />,
-    items: ["Git", "GitHub", "VS Code", "Postman", "Docker"],
+    items: ["Git", "GitHub", "VS Code", "Postman", "Docker", "CI/CD"],
+  },
+  {
+    category: "Emerging Technologies",
+    icon: <Sparkles className="h-6 w-6" />,
+    items: ["Web3", "Progressive Web Apps", "Serverless Architecture", "AI-Enhanced UX"],
   },
   {
     category: "Other",
     icon: <Globe className="h-6 w-6" />,
-    items: ["RESTful APIs", "GraphQL", "Responsive Design", "UI/UX Principles"],
+    items: ["Responsive Design", "UI/UX Principles", "Performance Optimization", "Accessibility"],
   },
 ]
 
@@ -75,7 +85,7 @@ export default function Skills() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {skills.map((skill, index) => (
             <motion.div key={index} variants={item}>

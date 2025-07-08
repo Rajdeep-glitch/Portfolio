@@ -27,9 +27,14 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    
+    // Redirect to email client with pre-filled fields
+    const subject = encodeURIComponent(`Portfolio Contact: ${formData.name}`)
+    const body = encodeURIComponent(`Message from: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)
+    window.location.href = `mailto:royraj83368@gmail.com?subject=${subject}&body=${body}`
+    
+    // Also show success message
     setIsSubmitting(true)
-
-    // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false)
       setSubmitSuccess(true)
