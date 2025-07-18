@@ -6,44 +6,44 @@ import { Code2, Database, Globe, Layout, Server, GitBranch, Brain, Sparkles } fr
 
 const skills = [
   {
-    category: "Frontend",
+    category: "Frontend Development",
     icon: <Layout className="h-6 w-6" />,
-    items: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Tailwind CSS", "Framer Motion"],
+    items: ["HTML5", "CSS3", "JavaScript", "React", "Next.js", "TypeScript", "Tailwind CSS", "Responsive Design"],
   },
   {
-    category: "Backend",
+    category: "Backend Development",
     icon: <Server className="h-6 w-6" />,
-    items: ["Node.js", "Express", "MongoDB", "Firebase", "RESTful APIs", "GraphQL"],
+    items: ["Node.js", "Express.js", "RESTful APIs", "Authentication", "Database Integration", "Server Management"],
   },
   {
-    category: "AI & Machine Learning",
+    category: "Machine Learning & AI",
     icon: <Brain className="h-6 w-6" />,
-    items: ["TensorFlow.js", "ML Integration", "Data Visualization", "Predictive Models", "Google AI APIs"],
+    items: ["Python", "Scikit-learn", "Pandas", "NumPy", "Jupyter Notebook", "Linear Regression", "NLP", "Streamlit"],
   },
   {
     category: "Programming Languages",
     icon: <Code2 className="h-6 w-6" />,
-    items: ["JavaScript", "TypeScript", "Python", "Java", "C++"],
+    items: ["JavaScript", "TypeScript", "Python", "HTML", "CSS", "SQL"],
   },
   {
-    category: "Databases",
+    category: "Databases & Storage",
     icon: <Database className="h-6 w-6" />,
-    items: ["MongoDB", "MySQL", "PostgreSQL", "Firebase", "Data Modeling"],
+    items: ["MongoDB", "MySQL", "SQLite", "Database Design", "Data Modeling", "CRUD Operations"],
   },
   {
-    category: "DevOps & Tools",
+    category: "Development Tools",
     icon: <GitBranch className="h-6 w-6" />,
-    items: ["Git", "GitHub", "VS Code", "Postman", "Docker", "CI/CD"],
+    items: ["Git", "GitHub", "VS Code", "Google Colab", "Postman", "npm/yarn", "Command Line"],
   },
   {
-    category: "Emerging Technologies",
-    icon: <Sparkles className="h-6 w-6" />,
-    items: ["Web3", "Progressive Web Apps", "Serverless Architecture", "AI-Enhanced UX"],
-  },
-  {
-    category: "Other",
+    category: "Web Technologies",
     icon: <Globe className="h-6 w-6" />,
-    items: ["Responsive Design", "UI/UX Principles", "Performance Optimization", "Accessibility"],
+    items: ["Progressive Web Apps", "API Integration", "JSON", "AJAX", "DOM Manipulation", "Web Performance"],
+  },
+  {
+    category: "Specialized Skills",
+    icon: <Sparkles className="h-6 w-6" />,
+    items: ["Data Visualization", "Chatbot Development", "Price Prediction Models", "Agricultural Tech", "Hotel Management Systems"],
   },
 ]
 

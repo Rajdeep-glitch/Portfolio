@@ -7,8 +7,68 @@ import Link from "next/link"
 
 export default function Hero() {
   return (
-    <section className="relative h-screen flex flex-col items-center justify-center text-center px-4">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-background to-background"></div>
+    <section className="relative h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-background to-background"></div>
+        
+        {/* Floating Particles */}
+        {[...Array(20)].map((_, i) => {
+          // Use deterministic values based on index to avoid hydration mismatch
+          const initialX = (i * 47) % 1000;
+          const initialY = (i * 73) % 800;
+          const animateX = ((i * 31) % 1000);
+          const animateY = ((i * 59) % 800);
+          const duration = 10 + (i % 10);
+          
+          return (
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-purple-500/20 rounded-full"
+              initial={{
+                x: initialX,
+                y: initialY,
+              }}
+              animate={{
+                x: animateX,
+                y: animateY,
+              }}
+              transition={{
+                duration: duration,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "linear"
+              }}
+            />
+          );
+        })}
+        
+        {/* Gradient Orbs */}
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            rotate: [0, 180, 360],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-gradient-to-r from-pink-500/10 to-purple-500/10 rounded-full blur-3xl"
+          animate={{
+            scale: [1.2, 1, 1.2],
+            rotate: [360, 180, 0],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
+      </div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -17,16 +77,30 @@ export default function Hero() {
         className="max-w-3xl mx-auto"
       >
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-          Hi, I&apos;m <span className="text-purple-500">Rajdeep</span>
+          Hi, I&apos;m{" "}
+          <motion.span
+            animate={{
+              scale: [1, 1.1, 1],
+              color: ["#8b5cf6", "#06b6d4", "#8b5cf6"],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="inline-block"
+          >
+            Rajdeep
+          </motion.span>
         </h1>
         <h2 className="text-2xl md:text-3xl font-medium text-muted-foreground mb-4">
-          Full Stack Developer & AI Enthusiast
+          Web & ML Developer | Created Real-World AI + Web Solutions
         </h2>
         <p className="text-lg text-muted-foreground/80 max-w-2xl mx-auto mb-4">
-          I’m a passionate full stack developer and AI enthusiast, driven by curiosity and a love for building impactful digital solutions. I thrive in collaborative environments and enjoy turning complex problems into elegant, user-friendly products. Currently seeking opportunities to innovate and grow with world-class teams.
+          Passionate about Impact-Driven Tech with expertise in React, Python, MongoDB, and HuggingFace. I specialize in creating responsive web applications, developing intelligent chatbots, and implementing data-driven solutions that solve real-world problems.
         </p>
         <p className="text-base text-muted-foreground/70 max-w-2xl mx-auto mb-8">
-          Building intelligent web applications with modern technologies and AI integration.
+          Recent Web Development Intern at Haridevpur Nirvriti Foundation • Building impactful systems with modern technology
         </p>
 
         <motion.div

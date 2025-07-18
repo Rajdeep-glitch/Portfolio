@@ -9,38 +9,47 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 const timelineData = [
   {
     id: 1,
-    date: "2023 - Present",
-    title: "Full Stack Developer",
-    company: "Tech Innovations",
+    date: "Jan 2025 - Jul 2025",
+    title: "Web Development Intern",
+    company: "Haridevpur NIRVRITI Foundation",
     description:
-      "Leading development of web applications using React, Node.js, and MongoDB. Implemented CI/CD pipelines that reduced deployment time by 40%.",
-    skills: ["React", "Node.js", "MongoDB", "CI/CD"],
+      "Developed and deployed the official NGO website from scratch with a focus on responsiveness and user experience. Translated community needs into a modern, accessible digital platform that enhanced engagement with volunteers and donors. Received two letters of recommendation from the President and an external partner (Sr. Manager, Schneider Electric) for outstanding performance and initiative.",
+    skills: ["JavaScript", "React.js", "Web Development", "UI/UX Design", "Community Impact"],
   },
   {
     id: 2,
-    date: "2022 - 2023",
-    title: "Frontend Developer",
-    company: "Digital Solutions",
+    date: "2024 - Present",
+    title: "Frontend Developer & ML Enthusiast",
+    company: "Personal Projects & Learning",
     description:
-      "Developed responsive user interfaces using React and Next.js. Optimized client-side rendering, improving load times by 30%.",
-    skills: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
+      "Actively developing machine learning applications and modern web interfaces. Created intelligent chatbot, house price predictor, and various full-stack applications using React, Python, and ML frameworks.",
+    skills: ["React", "Python", "Machine Learning", "Streamlit", "Node.js"],
   },
   {
     id: 3,
-    date: "2021 - 2022",
-    title: "Web Development Intern",
-    company: "StartUp Hub",
+    date: "2023 - 2024",
+    title: "Full-Stack Development Journey",
+    company: "Self-Directed Learning",
     description:
-      "Assisted in building web applications and gained hands-on experience with modern JavaScript frameworks.",
-    skills: ["JavaScript", "HTML/CSS", "Git", "Agile"],
+      "Mastered modern web development technologies through hands-on projects. Built applications spanning agriculture, hospitality, voting systems, and mood tracking with focus on user experience and functionality.",
+    skills: ["JavaScript", "TypeScript", "HTML/CSS", "Database Design", "API Development"],
   },
   {
     id: 4,
-    date: "2023 - 2027",
-    title: "B.Tech in Computer Science",
-    company: "Techno India University",
-    description: "Focused on software engineering, data structures, and web technologies. Graduated with honors.",
-    skills: ["Algorithms", "Data Structures", "Software Engineering"],
+    date: "2023",
+    title: "Machine Learning Specialization",
+    company: "Google Colab & Python Ecosystem",
+    description:
+      "Developed expertise in machine learning algorithms and data science. Created predictive models, implemented NLP solutions, and built interactive data visualization applications.",
+    skills: ["Python", "Scikit-learn", "Pandas", "NumPy", "Jupyter", "Data Analysis"],
+  },
+  {
+    id: 5,
+    date: "2022 - Present",
+    title: "Computer Science Student",
+    company: "Academic Foundation",
+    description: "Building strong foundation in computer science fundamentals, algorithms, and software engineering principles while applying knowledge through practical projects.",
+    skills: ["Algorithms", "Data Structures", "Software Engineering", "Problem Solving"],
   },
 ]
 

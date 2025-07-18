@@ -8,57 +8,44 @@ import Image from "next/image"
 const certifications = [
   {
     id: 1,
-    name: "AWS Certified Developer - Associate",
-    issuer: "Amazon Web Services",
-    date: "May 2023",
-    image: "/placeholder.svg?height=100&width=100&text=AWS",
-    description: "Validates technical expertise in developing and maintaining applications on AWS.",
-    credentialUrl: "https://www.credly.com/badges/aws-certified-developer-associate",
+    name: "ML-Powered Chatbot (NLP + Google Colab)",
+    issuer: "Featured Project",
+    date: "2024",
+    image: "/projects/ml_chatbot.png",
+    description: "Chatbot built using machine learning in Google Colab. Demonstrates NLP pipeline, training models, and user interaction.",
+    credentialUrl: "https://github.com/Rajdeep-glitch/ml_chatbot",
+    isFeatured: true,
   },
   {
     id: 2,
-    name: "React Developer Certification",
-    issuer: "Meta",
-    date: "January 2023",
-    image: "/placeholder.svg?height=100&width=100&text=Meta",
-    description: "Advanced React skills including hooks, context, and performance optimization.",
-    credentialUrl: "https://www.coursera.org/account/accomplishments/professional-cert/meta-react-developer",
+    name: "Voting App Backend API – Node & MongoDB",
+    issuer: "Featured Project",
+    date: "2024",
+    image: "/projects/Backend_VotingApp.png",
+    description: "RESTful API backend for a voting app. Includes routes, auth, and MongoDB integration for real-world backend experience.",
+    credentialUrl: "https://github.com/Rajdeep-glitch/Backend_VotingApp",
+    isFeatured: true,
   },
-  {
-    id: 3,
-    name: "MongoDB Developer Certification",
-    issuer: "MongoDB University",
-    date: "November 2022",
-    image: "/placeholder.svg?height=100&width=100&text=MongoDB",
-    description: "Expertise in building applications using MongoDB's document data model and query API.",
-    credentialUrl: "https://university.mongodb.com/certification/developer",
-  },
+
   {
     id: 4,
-    name: "Professional Scrum Master I",
-    issuer: "Scrum.org",
-    date: "August 2022",
-    image: "/placeholder.svg?height=100&width=100&text=Scrum",
-    description: "Understanding of Scrum framework and ability to apply it in real-world scenarios.",
-    credentialUrl: "https://www.scrum.org/professional-scrum-certifications/professional-scrum-master-i-certification",
+    name: "House Price Prediction App – ML & Streamlit",
+    issuer: "Featured Project",
+    date: "2024",
+    image: "/projects/ml_houseprice_predictor.png",
+    description: "A real-time Streamlit web app predicting house prices using linear regression. Built with Python, pandas, and scikit-learn.",
+    credentialUrl: "https://github.com/Rajdeep-glitch/ml_houseprice_predictor",
+    isFeatured: true,
   },
   {
     id: 5,
-    name: "Google UX Design Professional Certificate",
-    issuer: "Google",
-    date: "June 2022",
-    image: "/placeholder.svg?height=100&width=100&text=Google",
-    description: "Comprehensive training in UX research, wireframing, prototyping, and usability testing.",
-    credentialUrl: "https://www.coursera.org/professional-certificates/google-ux-design",
-  },
-  {
-    id: 6,
-    name: "TensorFlow Developer Certificate",
-    issuer: "Google",
-    date: "March 2022",
-    image: "/placeholder.svg?height=100&width=100&text=TensorFlow",
-    description: "Proficiency in using TensorFlow to solve deep learning and ML problems.",
-    credentialUrl: "https://www.tensorflow.org/certificate",
+    name: "Letter of Recommendation – President, Haridevpur Nirvriti Foundation",
+    issuer: "Professional Recognition",
+    date: "2025",
+    image: "/certificates/recommendation-letter.jpg",
+    description: "Grateful to receive this letter from the President of Haridevpur Nirvriti Foundation recognizing my 6-month Web Development Internship. I contributed to building and improving digital solutions that supported the foundation's mission. Honored to be acknowledged for my technical skills, dedication, and commitment to impactful work.",
+    credentialUrl: "#",
+    isRecommendation: true,
   },
 ]
 
@@ -73,14 +60,14 @@ export default function Certifications() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">Certifications & Badges</h2>
+          <h2 className="text-3xl font-bold mb-4">Featured Projects & Recognition</h2>
           <div className="h-1 w-20 bg-purple-500 mx-auto mb-6"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Professional certifications and achievements that validate my skills
+            Highlighted projects and professional recognition showcasing my technical expertise and impact
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {certifications.map((cert, index) => (
             <motion.div
               key={cert.id}
@@ -92,18 +79,28 @@ export default function Certifications() {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Card className="hover:shadow-md transition-shadow cursor-pointer">
+                    <Card className={`hover:shadow-md transition-shadow cursor-pointer ${
+                      cert.isFeatured ? 'border-purple-200 bg-purple-50/30 dark:bg-purple-900/10' : 
+                      cert.isRecommendation ? 'border-green-200 bg-green-50/30 dark:bg-green-900/10' : ''
+                    }`}>
                       <CardContent className="p-6 flex flex-col items-center text-center">
                         <div className="relative h-20 w-20 mb-4">
                           <Image
                             src={cert.image || "/placeholder.svg"}
                             alt={cert.name}
                             fill
-                            className="object-contain"
+                            className="object-contain rounded-md"
+                            onError={(e) => {
+                              const target = e.target as HTMLImageElement;
+                              target.src = `/placeholder.svg?height=80&width=80&text=${encodeURIComponent(cert.name.split(' ')[0])}`;
+                            }}
                           />
                         </div>
                         <h3 className="font-medium text-sm line-clamp-2">{cert.name}</h3>
-                        <p className="text-xs text-muted-foreground mt-1">{cert.issuer}</p>
+                        <p className={`text-xs mt-1 ${
+                          cert.isFeatured ? 'text-purple-600' : 
+                          cert.isRecommendation ? 'text-green-600' : 'text-muted-foreground'
+                        }`}>{cert.issuer}</p>
                       </CardContent>
                     </Card>
                   </TooltipTrigger>
@@ -111,15 +108,19 @@ export default function Certifications() {
                     <div className="space-y-2 p-1">
                       <h4 className="font-semibold">{cert.name}</h4>
                       <p className="text-xs">{cert.description}</p>
-                      <p className="text-xs text-muted-foreground">Issued: {cert.date}</p>
-                      <a
-                        href={cert.credentialUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs text-purple-500 hover:underline"
-                      >
-                        View Credential
-                      </a>
+                      <p className="text-xs text-muted-foreground">
+                        {cert.isFeatured ? 'Project Year:' : cert.isRecommendation ? 'Received:' : 'Issued:'} {cert.date}
+                      </p>
+                      {cert.credentialUrl !== '#' && (
+                        <a
+                          href={cert.credentialUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs text-purple-500 hover:underline"
+                        >
+                          {cert.isFeatured ? 'View on GitHub' : cert.isRecommendation ? 'View Letter' : 'View Credential'}
+                        </a>
+                      )}
                     </div>
                   </TooltipContent>
                 </Tooltip>
