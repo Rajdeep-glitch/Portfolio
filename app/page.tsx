@@ -12,6 +12,7 @@ import AIProjectRecommender from "@/components/ai-project-recommender"
 import PerformanceMetrics from "@/components/performance-metrics"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
+import MobilePortfolioCarousel from "@/components/mobile-portfolio-carousel"
 
 export default function Home() {
   return (
@@ -19,16 +20,25 @@ export default function Home() {
       <Navigation />
       <main className="min-h-screen">
         <Hero />
-        <About />
-        <ProfessionalStats />
-        <Projects />
-        <Skills />
-        <Testimonials />
-        <Certifications />
-        <Achievements />
-        <MetricsDashboard />
-        <AIProjectRecommender />
-        <PerformanceMetrics />
+        
+        {/* Mobile Portfolio Carousel - Only shows on mobile */}
+        <MobilePortfolioCarousel />
+        
+        {/* Desktop Sections - Hidden on mobile when carousel is active */}
+        <div className="md:block hidden">
+          <About />
+          <ProfessionalStats />
+          <Projects />
+          <Skills />
+          <Testimonials />
+          <Certifications />
+          <Achievements />
+          <MetricsDashboard />
+          <AIProjectRecommender />
+          <PerformanceMetrics />
+        </div>
+        
+        {/* Contact and Footer - Always visible */}
         <Contact />
         <Footer />
       </main>

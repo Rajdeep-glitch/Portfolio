@@ -60,3 +60,22 @@
     @apply scroll-smooth;
   }
 }
+
+@layer utilities {
+  /* Hide scrollbar for mobile carousel */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Mobile-specific optimizations */
+  @media (max-width: 768px) {
+    .mobile-carousel-content {
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+    }
+  }
+}
