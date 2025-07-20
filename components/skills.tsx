@@ -73,10 +73,10 @@ export default function Skills() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">Skills & Technologies</h2>
-          <div className="h-1 w-20 bg-purple-500 mx-auto mb-6"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Here are some of the technologies and tools I work with
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Skills & Technologies</h2>
+          <div className="h-1 w-20 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-6"></div>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+            A comprehensive toolkit for building modern, scalable applications and intelligent systems
           </p>
         </motion.div>
 
@@ -88,20 +88,34 @@ export default function Skills() {
           className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {skills.map((skill, index) => (
-            <motion.div key={index} variants={item}>
-              <Card className="h-full hover:shadow-md transition-shadow">
+            <motion.div 
+              key={index} 
+              variants={item}
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Card className="h-full hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-background to-muted/50 hover:from-purple-50/50 hover:to-blue-50/50 dark:hover:from-purple-950/20 dark:hover:to-blue-950/20">
                 <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="p-2 rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400">
+                  <div className="flex items-center gap-3 mb-6">
+                    <motion.div 
+                      className="p-3 rounded-xl bg-gradient-to-br from-purple-100 to-blue-100 text-purple-600 dark:from-purple-900/30 dark:to-blue-900/30 dark:text-purple-400"
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ duration: 0.2 }}
+                    >
                       {skill.icon}
-                    </div>
-                    <h3 className="font-semibold text-lg">{skill.category}</h3>
+                    </motion.div>
+                    <h3 className="font-bold text-lg">{skill.category}</h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {skill.items.map((item, i) => (
-                      <div key={i} className="px-3 py-1 bg-muted rounded-full text-sm">
+                      <motion.div 
+                        key={i} 
+                        className="px-3 py-2 bg-gradient-to-r from-muted to-muted/80 hover:from-purple-100 hover:to-blue-100 dark:hover:from-purple-900/30 dark:hover:to-blue-900/30 rounded-full text-sm font-medium transition-all duration-200 cursor-default"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.1 }}
+                      >
                         {item}
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
                 </CardContent>

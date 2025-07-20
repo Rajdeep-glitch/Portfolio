@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Github, Loader2, ArrowRight } from "lucide-react"
+import { ExternalLink, Github, Loader2, ArrowRight, Code } from "lucide-react"
 import Image from "next/image"
 
 interface Repository {
@@ -166,10 +166,10 @@ export default function Projects() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">My Projects</h2>
-          <div className="h-1 w-20 bg-purple-500 mx-auto mb-6"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Here are some of my recent projects. Check out my GitHub for more.
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
+          <div className="h-1 w-20 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-6"></div>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+            Showcasing real-world applications that demonstrate my expertise in web development, machine learning, and problem-solving.
           </p>
         </motion.div>
 
@@ -188,33 +188,43 @@ export default function Projects() {
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {projects.map((project) => (
-              <motion.div key={project.id} variants={item}>
-                <Card className="h-full flex flex-col hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <CardTitle className="line-clamp-1">{project.name.replace(/-/g, " ")}</CardTitle>
-                    <CardDescription>
+              <motion.div 
+                key={project.id} 
+                variants={item}
+                whileHover={{ y: -5 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Card className="h-full flex flex-col hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-background to-muted/30 hover:from-purple-50/50 hover:to-blue-50/50 dark:hover:from-purple-950/20 dark:hover:to-blue-950/20">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-start justify-between">
+                      <CardTitle className="line-clamp-1 text-lg font-bold">
+                        {project.name.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase())}
+                      </CardTitle>
                       {project.language && (
-                        <Badge variant="outline" className="mr-2">
+                        <Badge variant="secondary" className="bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">
                           {project.language}
                         </Badge>
                       )}
-                    </CardDescription>
+                    </div>
                   </CardHeader>
                   <CardContent className="flex-grow">
-                    <div className="h-40 relative mb-4 rounded-md overflow-hidden">
+                    <div className="h-40 relative mb-4 rounded-lg overflow-hidden group">
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 z-10"></div>
                       {imageError[project.name] ? (
-                        <Image
-                          src={`/ml_chatbot.png?height=160&width=320&text=${encodeURIComponent(project.name)}`}
-                          alt={project.name}
-                          fill
-                          className="object-cover"
-                        />
+                        <div className="w-full h-full bg-gradient-to-br from-purple-100 to-blue-100 dark:from-purple-900/20 dark:to-blue-900/20 flex items-center justify-center">
+                          <div className="text-center">
+                            <Code className="h-8 w-8 mx-auto mb-2 text-purple-500" />
+                            <p className="text-sm font-medium text-purple-600 dark:text-purple-400">
+                              {project.name.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase())}
+                            </p>
+                          </div>
+                        </div>
                       ) : (
                         <Image
                           src={`/projects/${project.name}.png`}
                           alt={project.name}
                           fill
-                          className="object-cover"
+                          className="object-cover group-hover:scale-105 transition-transform duration-300"
                           onError={() => handleImageError(project.name)}
                         />
                       )}

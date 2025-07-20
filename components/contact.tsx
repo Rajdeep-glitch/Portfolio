@@ -49,10 +49,10 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">Get In Touch</h2>
-          <div className="h-1 w-20 bg-purple-500 mx-auto mb-6"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Have a question or want to work together? Feel free to contact me!
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Let's Work Together</h2>
+          <div className="h-1 w-20 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-6"></div>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+            Ready to bring your ideas to life? Let's discuss how we can create something amazing together.
           </p>
         </motion.div>
 

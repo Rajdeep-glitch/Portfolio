@@ -1,37 +1,37 @@
+import Navigation from "@/components/navigation"
 import Hero from "@/components/hero"
-import Timeline from "@/components/timeline"
+import About from "@/components/about"
+import ProfessionalStats from "@/components/professional-stats"
 import Projects from "@/components/projects"
-import MetricsDashboard from "@/components/metrics-dashboard"
 import Skills from "@/components/skills"
+import Testimonials from "@/components/testimonials"
 import Certifications from "@/components/certifications"
 import Achievements from "@/components/achievements"
-import AICodeAnalyzer from "@/components/ai-code-analyzer"
-import AICareerAdvisor from "@/components/ai-career-advisor"
-import AITechTrends from "@/components/ai-tech-trends"
-import Contact from "@/components/contact"
-import PerformanceMetrics from "@/components/performance-metrics"
-import Footer from "@/components/footer"
-import AISkillAnalyzer from "@/components/ai-skill-analyzer"
+import MetricsDashboard from "@/components/metrics-dashboard"
 import AIProjectRecommender from "@/components/ai-project-recommender"
+import PerformanceMetrics from "@/components/performance-metrics"
+import Contact from "@/components/contact"
+import Footer from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Hero />
-      <Timeline />
-      <Projects />
-      <Skills />
-      <Certifications />
-      <Achievements />
-      <AICodeAnalyzer />
-      <AICareerAdvisor />
-      <AITechTrends />
-      <MetricsDashboard />
-      <AISkillAnalyzer />
-      <AIProjectRecommender />
-      <PerformanceMetrics />
-      <Contact />
-      <Footer />
-    </main>
+    <>
+      <Navigation />
+      <main className="min-h-screen">
+        <Hero />
+        <About />
+        <ProfessionalStats />
+        <Projects />
+        <Skills />
+        <Testimonials />
+        <Certifications />
+        <Achievements />
+        <MetricsDashboard />
+        <AIProjectRecommender />
+        <PerformanceMetrics />
+        <Contact />
+        <Footer />
+      </main>
+    </>
   )
 }
