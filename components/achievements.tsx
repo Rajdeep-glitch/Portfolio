@@ -116,9 +116,9 @@ export default function Achievements() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">Achievements & Recognition</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">Achievements & Recognition</h2>
           <div className="h-1 w-20 bg-purple-500 mx-auto mb-6"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base px-4">
             Key accomplishments and milestones in my development journey
           </p>
         </motion.div>
@@ -128,33 +128,33 @@ export default function Achievements() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
         >
           {achievements.map((achievement) => (
             <motion.div key={achievement.id} variants={item}>
               <Card className="h-full hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="p-2 rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400">
+                <CardHeader className="p-4 sm:p-6">
+                  <div className="flex items-center gap-2 sm:gap-3 mb-2">
+                    <div className="p-1.5 sm:p-2 rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400 flex-shrink-0">
                       {achievement.icon}
                     </div>
-                    <Badge variant="outline">{achievement.category}</Badge>
+                    <Badge variant="outline" className="text-xs">{achievement.category}</Badge>
                   </div>
-                  <CardTitle className="text-lg">{achievement.title}</CardTitle>
+                  <CardTitle className="text-base sm:text-lg leading-tight">{achievement.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4 text-sm">
+                <CardContent className="p-4 sm:p-6 pt-0">
+                  <p className="text-muted-foreground mb-3 sm:mb-4 text-xs sm:text-sm leading-relaxed">
                     {achievement.description}
                   </p>
                   <div className="space-y-2">
-                    <h4 className="font-semibold text-sm text-purple-600">Key Highlights:</h4>
-                    <ul className="list-disc list-inside text-xs text-muted-foreground space-y-1">
+                    <h4 className="font-semibold text-xs sm:text-sm text-purple-600">Key Highlights:</h4>
+                    <ul className="list-disc list-inside text-xs text-muted-foreground space-y-0.5 sm:space-y-1 leading-relaxed">
                       {achievement.highlights.map((highlight, index) => (
                         <li key={index}>{highlight}</li>
                       ))}
                     </ul>
                   </div>
-                  <div className="mt-4 pt-4 border-t">
+                  <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t">
                     <span className="text-xs text-muted-foreground">{achievement.date}</span>
                   </div>
                 </CardContent>

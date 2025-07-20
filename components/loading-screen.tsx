@@ -21,28 +21,28 @@ export default function LoadingScreen() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-background"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-background px-4"
         >
-          <div className="text-center">
+          <div className="text-center w-full max-w-sm">
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="mb-8"
+              className="mb-6 sm:mb-8"
             >
-              <div className="relative w-20 h-20 mx-auto">
+              <div className="relative w-16 h-16 sm:w-20 sm:h-20 mx-auto">
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-0 rounded-full border-4 border-purple-200 dark:border-purple-800"
+                  className="absolute inset-0 rounded-full border-3 sm:border-4 border-purple-200 dark:border-purple-800"
                 />
                 <motion.div
                   animate={{ rotate: -360 }}
                   transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-2 rounded-full border-4 border-transparent border-t-purple-500 border-r-blue-500"
+                  className="absolute inset-1 sm:inset-2 rounded-full border-3 sm:border-4 border-transparent border-t-purple-500 border-r-blue-500"
                 />
-                <div className="absolute inset-6 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">R</span>
+                <div className="absolute inset-4 sm:inset-6 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
+                  <span className="text-white font-bold text-sm sm:text-lg">R</span>
                 </div>
               </div>
             </motion.div>
@@ -52,19 +52,19 @@ export default function LoadingScreen() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <h1 className="text-2xl font-bold mb-2">
+              <h1 className="text-xl sm:text-2xl font-bold mb-2">
                 <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
                   Rajdeep Roy
                 </span>
               </h1>
-              <p className="text-muted-foreground">Web & ML Developer</p>
+              <p className="text-muted-foreground text-sm sm:text-base">Web & ML Developer</p>
             </motion.div>
 
             <motion.div
               initial={{ width: 0 }}
               animate={{ width: "100%" }}
               transition={{ duration: 1.5, delay: 0.5 }}
-              className="mt-8 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mx-auto max-w-xs"
+              className="mt-6 sm:mt-8 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mx-auto max-w-xs"
             />
           </div>
         </motion.div>

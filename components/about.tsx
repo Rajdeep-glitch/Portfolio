@@ -67,14 +67,14 @@ export default function About() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">About Me</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">About Me</h2>
           <div className="h-1 w-20 bg-purple-500 mx-auto mb-6"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base px-4">
             Passionate developer creating impactful solutions with modern technology
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {/* Profile Card */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -84,21 +84,28 @@ export default function About() {
             className="lg:col-span-1"
           >
             <Card className="h-full">
-              <CardContent className="p-6 text-center">
-                <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-purple-500 to-blue-500 p-1">
-                  <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
-                    <span className="text-4xl font-bold text-purple-500">R</span>
+              <CardContent className="p-4 sm:p-6 text-center">
+                <div className="relative w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-3 sm:mb-4 rounded-full overflow-hidden bg-gradient-to-br from-purple-500 to-blue-500 p-1">
+                  <div className="w-full h-full rounded-full bg-background overflow-hidden">
+                    <Image
+                      src="/Rajdeep.jpg"
+                      alt="Rajdeep Roy"
+                      width={128}
+                      height={128}
+                      className="w-full h-full object-cover rounded-full"
+                      priority
+                    />
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Rajdeep Roy</h3>
-                <p className="text-muted-foreground mb-4">Web & ML Developer</p>
-                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-4">
-                  <MapPin className="h-4 w-4" />
+                <h3 className="text-lg sm:text-xl font-bold mb-2">Rajdeep Roy</h3>
+                <p className="text-muted-foreground mb-3 sm:mb-4 text-sm sm:text-base">Web & ML Developer</p>
+                <div className="flex items-center justify-center gap-2 text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">
+                  <MapPin className="h-3 w-3 sm:h-4 sm:w-4" />
                   <span>India</span>
                 </div>
-                <Button asChild className="w-full">
+                <Button asChild className="w-full text-xs sm:text-sm h-8 sm:h-10">
                   <a href="/resume.pdf" download>
-                    <Download className="mr-2 h-4 w-4" />
+                    <Download className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
                     Download Resume
                   </a>
                 </Button>
@@ -115,9 +122,9 @@ export default function About() {
             className="lg:col-span-2"
           >
             <Card className="h-full">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4">My Story</h3>
-                <div className="space-y-4 text-muted-foreground">
+              <CardContent className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">My Story</h3>
+                <div className="space-y-3 sm:space-y-4 text-muted-foreground text-sm sm:text-base">
                   <p>
                     I'm a passionate Web & ML Developer with expertise in creating responsive web applications 
                     and intelligent systems. My journey began with a curiosity about how technology can solve 
@@ -136,14 +143,14 @@ export default function About() {
                   </p>
                 </div>
                 
-                <div className="mt-6">
-                  <h4 className="font-semibold mb-3">Core Competencies</h4>
-                  <div className="flex flex-wrap gap-2">
+                <div className="mt-4 sm:mt-6">
+                  <h4 className="font-semibold mb-2 sm:mb-3 text-sm sm:text-base">Core Competencies</h4>
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {[
                       "React & Next.js", "Python & ML", "Node.js", "MongoDB", 
                       "TypeScript", "Tailwind CSS", "API Development", "UI/UX Design"
                     ].map((skill) => (
-                      <Badge key={skill} variant="secondary">
+                      <Badge key={skill} variant="secondary" className="text-xs px-2 py-0.5">
                         {skill}
                       </Badge>
                     ))}
@@ -160,15 +167,15 @@ export default function About() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
+          className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-12"
         >
           {stats.map((stat, index) => (
             <motion.div key={index} variants={item}>
               <Card className="text-center hover:shadow-md transition-shadow">
-                <CardContent className="p-6">
-                  <stat.icon className="h-8 w-8 mx-auto mb-2 text-purple-500" />
-                  <div className="text-2xl font-bold text-purple-500">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <CardContent className="p-3 sm:p-6">
+                  <stat.icon className="h-6 w-6 sm:h-8 sm:w-8 mx-auto mb-1 sm:mb-2 text-purple-500" />
+                  <div className="text-lg sm:text-2xl font-bold text-purple-500">{stat.value}</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground leading-tight">{stat.label}</div>
                 </CardContent>
               </Card>
             </motion.div>

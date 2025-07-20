@@ -60,14 +60,14 @@ export default function Certifications() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">Featured Projects & Recognition</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">Featured Projects & Recognition</h2>
           <div className="h-1 w-20 bg-purple-500 mx-auto mb-6"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base px-4">
             Highlighted projects and professional recognition showcasing my technical expertise and impact
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
           {certifications.map((cert, index) => (
             <motion.div
               key={cert.id}
@@ -83,8 +83,8 @@ export default function Certifications() {
                       cert.isFeatured ? 'border-purple-200 bg-purple-50/30 dark:bg-purple-900/10' : 
                       cert.isRecommendation ? 'border-green-200 bg-green-50/30 dark:bg-green-900/10' : ''
                     }`}>
-                      <CardContent className="p-6 flex flex-col items-center text-center">
-                        <div className="relative h-20 w-20 mb-4">
+                      <CardContent className="p-3 sm:p-4 md:p-6 flex flex-col items-center text-center">
+                        <div className="relative h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 mb-2 sm:mb-3 md:mb-4">
                           <Image
                             src={cert.image || "/placeholder.svg"}
                             alt={cert.name}
@@ -96,8 +96,8 @@ export default function Certifications() {
                             }}
                           />
                         </div>
-                        <h3 className="font-medium text-sm line-clamp-2">{cert.name}</h3>
-                        <p className={`text-xs mt-1 ${
+                        <h3 className="font-medium text-xs sm:text-sm line-clamp-2 leading-tight">{cert.name}</h3>
+                        <p className={`text-xs mt-1 leading-tight ${
                           cert.isFeatured ? 'text-purple-600' : 
                           cert.isRecommendation ? 'text-green-600' : 'text-muted-foreground'
                         }`}>{cert.issuer}</p>

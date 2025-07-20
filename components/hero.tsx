@@ -19,7 +19,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section id="hero" className="relative h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden pt-20 md:pt-16">
+    <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden pt-16 sm:pt-20 md:pt-16">
       {/* Animated Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-background to-background"></div>
@@ -107,10 +107,10 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="max-w-3xl mx-auto mt-8 md:mt-12"
+        className="max-w-4xl mx-auto mt-4 sm:mt-8 md:mt-12 w-full"
       >
         <motion.h1 
-          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
+          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 sm:mb-6 leading-tight"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -138,17 +138,17 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mb-8"
         >
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-muted-foreground mb-2">
+          <h2 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-medium text-muted-foreground mb-2 sm:mb-3">
             Web & ML Developer
           </h2>
-          <div className="flex flex-wrap justify-center gap-2 text-lg md:text-xl text-purple-500">
+          <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2 text-sm sm:text-base md:text-lg text-purple-500">
             {["React", "Python", "AI/ML", "Node.js"].map((tech, index) => (
               <motion.span
                 key={tech}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                className="px-3 py-1 bg-purple-100 dark:bg-purple-900/20 rounded-full text-sm font-medium"
+                className="px-2 py-1 sm:px-3 bg-purple-100 dark:bg-purple-900/20 rounded-full text-xs sm:text-sm font-medium"
               >
                 {tech}
               </motion.span>
@@ -157,7 +157,7 @@ export default function Hero() {
         </motion.div>
         
         <motion.p 
-          className="text-lg md:text-xl text-muted-foreground/80 max-w-3xl mx-auto mb-4 leading-relaxed"
+          className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground/80 max-w-3xl mx-auto mb-3 sm:mb-4 leading-relaxed px-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -171,7 +171,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="flex flex-wrap justify-center gap-3 mb-8"
+          className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 sm:mb-8 px-2"
         >
           {[
             "Full-Stack Development",
@@ -185,7 +185,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
-              className="px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 rounded-full text-sm font-medium text-purple-700 dark:text-purple-300 border border-purple-200/50 dark:border-purple-800/50"
+              className="px-2 py-1 sm:px-4 sm:py-2 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 rounded-full text-xs sm:text-sm font-medium text-purple-700 dark:text-purple-300 border border-purple-200/50 dark:border-purple-800/50"
             >
               {skill}
             </motion.div>
@@ -196,15 +196,15 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.8, duration: 0.8 }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-8 sm:mb-12 px-2"
         >
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Button asChild size="lg" className="rounded-full bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white border-0 shadow-lg">
+            <Button asChild size="sm" className="sm:size-lg rounded-full bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white border-0 shadow-lg text-xs sm:text-sm px-4 sm:px-6 py-2 sm:py-3 h-auto">
               <Link href="#projects">
-                View My Work <ArrowRight className="ml-2 h-4 w-4" />
+                View My Work <ArrowRight className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4" />
               </Link>
             </Button>
           </motion.div>
@@ -213,9 +213,9 @@ export default function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Button asChild variant="outline" size="lg" className="rounded-full border-purple-200 hover:bg-purple-50 dark:border-purple-800 dark:hover:bg-purple-950/20">
+            <Button asChild variant="outline" size="sm" className="sm:size-lg rounded-full border-purple-200 hover:bg-purple-50 dark:border-purple-800 dark:hover:bg-purple-950/20 text-xs sm:text-sm px-3 sm:px-6 py-2 sm:py-3 h-auto">
               <a href="https://github.com/Rajdeep-glitch" target="_blank" rel="noopener noreferrer">
-                <GitHub className="mr-2 h-4 w-4" /> GitHub
+                <GitHub className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" /> GitHub
               </a>
             </Button>
           </motion.div>
@@ -224,9 +224,9 @@ export default function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Button asChild variant="outline" size="lg" className="rounded-full border-purple-200 hover:bg-purple-50 dark:border-purple-800 dark:hover:bg-purple-950/20">
+            <Button asChild variant="outline" size="sm" className="sm:size-lg rounded-full border-purple-200 hover:bg-purple-50 dark:border-purple-800 dark:hover:bg-purple-950/20 text-xs sm:text-sm px-3 sm:px-6 py-2 sm:py-3 h-auto">
               <a href="https://www.linkedin.com/in/rajdeep-roy-243977290/" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
+                <Linkedin className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" /> LinkedIn
               </a>
             </Button>
           </motion.div>
@@ -235,9 +235,9 @@ export default function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Button asChild variant="outline" size="lg" className="rounded-full border-purple-200 hover:bg-purple-50 dark:border-purple-800 dark:hover:bg-purple-950/20">
+            <Button asChild variant="outline" size="sm" className="sm:size-lg rounded-full border-purple-200 hover:bg-purple-50 dark:border-purple-800 dark:hover:bg-purple-950/20 text-xs sm:text-sm px-3 sm:px-6 py-2 sm:py-3 h-auto">
               <a href="/resume.pdf" download>
-                <Download className="mr-2 h-4 w-4" /> Resume
+                <Download className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" /> Resume
               </a>
             </Button>
           </motion.div>
@@ -246,9 +246,9 @@ export default function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Button asChild variant="outline" size="lg" className="rounded-full border-purple-200 hover:bg-purple-50 dark:border-purple-800 dark:hover:bg-purple-950/20">
+            <Button asChild variant="outline" size="sm" className="sm:size-lg rounded-full border-purple-200 hover:bg-purple-50 dark:border-purple-800 dark:hover:bg-purple-950/20 text-xs sm:text-sm px-3 sm:px-6 py-2 sm:py-3 h-auto">
               <Link href="#contact">
-                <Mail className="mr-2 h-4 w-4" /> Contact
+                <Mail className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" /> Contact
               </Link>
             </Button>
           </motion.div>

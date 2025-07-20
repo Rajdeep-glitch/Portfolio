@@ -166,9 +166,9 @@ export default function Projects() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
           <div className="h-1 w-20 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-6"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base lg:text-lg px-4">
             Showcasing real-world applications that demonstrate my expertise in web development, machine learning, and problem-solving.
           </p>
         </motion.div>
@@ -185,7 +185,7 @@ export default function Projects() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
           >
             {projects.map((project) => (
               <motion.div 
@@ -195,26 +195,26 @@ export default function Projects() {
                 transition={{ duration: 0.2 }}
               >
                 <Card className="h-full flex flex-col hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-background to-muted/30 hover:from-purple-50/50 hover:to-blue-50/50 dark:hover:from-purple-950/20 dark:hover:to-blue-950/20">
-                  <CardHeader className="pb-4">
-                    <div className="flex items-start justify-between">
-                      <CardTitle className="line-clamp-1 text-lg font-bold">
+                  <CardHeader className="pb-3 sm:pb-4">
+                    <div className="flex items-start justify-between gap-2">
+                      <CardTitle className="line-clamp-2 text-base sm:text-lg font-bold leading-tight">
                         {project.name.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase())}
                       </CardTitle>
                       {project.language && (
-                        <Badge variant="secondary" className="bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">
+                        <Badge variant="secondary" className="bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 text-xs flex-shrink-0">
                           {project.language}
                         </Badge>
                       )}
                     </div>
                   </CardHeader>
-                  <CardContent className="flex-grow">
-                    <div className="h-40 relative mb-4 rounded-lg overflow-hidden group">
+                  <CardContent className="flex-grow p-4 sm:p-6">
+                    <div className="h-32 sm:h-40 relative mb-3 sm:mb-4 rounded-lg overflow-hidden group">
                       <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 z-10"></div>
                       {imageError[project.name] ? (
                         <div className="w-full h-full bg-gradient-to-br from-purple-100 to-blue-100 dark:from-purple-900/20 dark:to-blue-900/20 flex items-center justify-center">
                           <div className="text-center">
-                            <Code className="h-8 w-8 mx-auto mb-2 text-purple-500" />
-                            <p className="text-sm font-medium text-purple-600 dark:text-purple-400">
+                            <Code className="h-6 w-6 sm:h-8 sm:w-8 mx-auto mb-2 text-purple-500" />
+                            <p className="text-xs sm:text-sm font-medium text-purple-600 dark:text-purple-400">
                               {project.name.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase())}
                             </p>
                           </div>
@@ -229,44 +229,44 @@ export default function Projects() {
                         />
                       )}
                     </div>
-                    <p className="text-sm line-clamp-3">
+                    <p className="text-xs sm:text-sm line-clamp-3 leading-relaxed">
                       {project.enhancedDescription || project.description || `A ${project.language} project named ${project.name.replace(/-/g, " ")}`}
                     </p>
-                    <div className="flex flex-wrap gap-2 mt-4">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-3 sm:mt-4">
                       {project.techStack && project.techStack.length > 0 ? (
-                        project.techStack.slice(0, 4).map((tech) => (
-                          <Badge key={tech} variant="secondary" className="text-xs">
+                        project.techStack.slice(0, 3).map((tech) => (
+                          <Badge key={tech} variant="secondary" className="text-xs px-2 py-0.5">
                             {tech}
                           </Badge>
                         ))
                       ) : (
                         project.topics &&
-                        project.topics.slice(0, 3).map((topic) => (
-                          <Badge key={topic} variant="secondary" className="text-xs">
+                        project.topics.slice(0, 2).map((topic) => (
+                          <Badge key={topic} variant="secondary" className="text-xs px-2 py-0.5">
                             {topic}
                           </Badge>
                         ))
                       )}
                     </div>
-                    <div className="mt-4">
-                      <h4 className="font-semibold text-sm mb-1 text-purple-600">Key Features</h4>
-                      <ul className="list-disc list-inside text-xs text-muted-foreground space-y-1">
+                    <div className="mt-3 sm:mt-4">
+                      <h4 className="font-semibold text-xs sm:text-sm mb-1 text-purple-600">Key Features</h4>
+                      <ul className="list-disc list-inside text-xs text-muted-foreground space-y-0.5 sm:space-y-1">
                         {project.highlights?.map((highlight, index) => (
                           <li key={index}>{highlight}</li>
                         ))}
                       </ul>
                     </div>
                   </CardContent>
-                  <CardFooter className="flex gap-2">
-                    <Button asChild variant="outline" size="sm" className="flex-1">
+                  <CardFooter className="flex gap-2 p-4 sm:p-6 pt-3 sm:pt-4">
+                    <Button asChild variant="outline" size="sm" className="flex-1 text-xs sm:text-sm h-8 sm:h-9">
                       <a href={project.html_url} target="_blank" rel="noopener noreferrer">
-                        <Github className="mr-2 h-4 w-4" /> Code
+                        <Github className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" /> Code
                       </a>
                     </Button>
                     {project.homepage && (
-                      <Button asChild size="sm" className="flex-1 bg-purple-100 text-purple-700 border-purple-300 hover:bg-purple-200">
+                      <Button asChild size="sm" className="flex-1 bg-purple-100 text-purple-700 border-purple-300 hover:bg-purple-200 text-xs sm:text-sm h-8 sm:h-9">
                         <a href={project.homepage} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="mr-2 h-4 w-4" /> Demo
+                          <ExternalLink className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" /> Demo
                         </a>
                       </Button>
                     )}

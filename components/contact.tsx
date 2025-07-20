@@ -49,14 +49,14 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Let's Work Together</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Let's Work Together</h2>
           <div className="h-1 w-20 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-6"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base lg:text-lg px-4">
             Ready to bring your ideas to life? Let's discuss how we can create something amazing together.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -64,56 +64,56 @@ export default function Contact() {
             transition={{ duration: 0.5 }}
           >
             <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
+              <CardContent className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">Contact Information</h3>
 
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="p-2 rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400">
-                      <Mail className="h-5 w-5" />
+                <div className="space-y-4 sm:space-y-6">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="p-2 rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400 flex-shrink-0">
+                      <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
                     </div>
                     <div>
-                      <h4 className="font-medium">Email</h4>
+                      <h4 className="font-medium text-sm sm:text-base">Email</h4>
                       <a
                         href="mailto:royraj83368@gmail.com"
-                        className="text-muted-foreground hover:text-purple-500 transition-colors"
+                        className="text-muted-foreground hover:text-purple-500 transition-colors text-sm sm:text-base break-all"
                       >
                         royraj83368@gmail.com
                       </a>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="p-2 rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400">
-                      <MapPin className="h-5 w-5" />
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="p-2 rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400 flex-shrink-0">
+                      <MapPin className="h-4 w-4 sm:h-5 sm:w-5" />
                     </div>
                     <div>
-                      <h4 className="font-medium">Location</h4>
-                      <p className="text-muted-foreground">India</p>
+                      <h4 className="font-medium text-sm sm:text-base">Location</h4>
+                      <p className="text-muted-foreground text-sm sm:text-base">India</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="p-2 rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400">
-                      <Phone className="h-5 w-5" />
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="p-2 rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400 flex-shrink-0">
+                      <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
                     </div>
                     <div>
-                      <h4 className="font-medium">Phone</h4>
-                      <p className="text-muted-foreground">Available upon request</p>
+                      <h4 className="font-medium text-sm sm:text-base">Phone</h4>
+                      <p className="text-muted-foreground text-sm sm:text-base">Available upon request</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="mt-8">
-                  <h4 className="font-medium mb-4">Connect with me</h4>
-                  <div className="flex gap-4">
+                <div className="mt-6 sm:mt-8">
+                  <h4 className="font-medium mb-3 sm:mb-4 text-sm sm:text-base">Connect with me</h4>
+                  <div className="flex gap-3 sm:gap-4">
                     <a
                       href="https://github.com/Rajdeep-glitch"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors"
                     >
-                      <Github className="h-5 w-5" />
+                      <Github className="h-4 w-4 sm:h-5 sm:w-5" />
                       <span className="sr-only">GitHub</span>
                     </a>
                     <a
@@ -122,7 +122,7 @@ export default function Contact() {
                       rel="noopener noreferrer"
                       className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors"
                     >
-                      <Linkedin className="h-5 w-5" />
+                      <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
                       <span className="sr-only">LinkedIn</span>
                     </a>
                   </div>
@@ -138,17 +138,17 @@ export default function Contact() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-6">Send Me a Message</h3>
+              <CardContent className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">Send Me a Message</h3>
 
                 {submitSuccess ? (
-                  <div className="bg-green-100 text-green-700 p-4 rounded-md dark:bg-green-900/20 dark:text-green-400">
+                  <div className="bg-green-100 text-green-700 p-3 sm:p-4 rounded-md dark:bg-green-900/20 dark:text-green-400 text-sm sm:text-base">
                     Thank you for your message! I&apos;ll get back to you soon.
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium mb-1">
+                      <label htmlFor="name" className="block text-xs sm:text-sm font-medium mb-1">
                         Name
                       </label>
                       <Input
@@ -158,11 +158,12 @@ export default function Contact() {
                         onChange={handleChange}
                         placeholder="Your name"
                         required
+                        className="text-sm sm:text-base h-9 sm:h-10"
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium mb-1">
+                      <label htmlFor="email" className="block text-xs sm:text-sm font-medium mb-1">
                         Email
                       </label>
                       <Input
@@ -173,11 +174,12 @@ export default function Contact() {
                         onChange={handleChange}
                         placeholder="Your email"
                         required
+                        className="text-sm sm:text-base h-9 sm:h-10"
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium mb-1">
+                      <label htmlFor="message" className="block text-xs sm:text-sm font-medium mb-1">
                         Message
                       </label>
                       <Textarea
@@ -186,20 +188,21 @@ export default function Contact() {
                         value={formData.message}
                         onChange={handleChange}
                         placeholder="Your message"
-                        rows={5}
+                        rows={4}
                         required
+                        className="text-sm sm:text-base min-h-[100px] sm:min-h-[120px]"
                       />
                     </div>
 
-                    <Button type="submit" className="w-full" disabled={isSubmitting}>
+                    <Button type="submit" className="w-full text-sm sm:text-base h-9 sm:h-10" disabled={isSubmitting}>
                       {isSubmitting ? (
                         <>
-                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                          <Loader2 className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4 animate-spin" />
                           Sending...
                         </>
                       ) : (
                         <>
-                          <Send className="mr-2 h-4 w-4" />
+                          <Send className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
                           Send Message
                         </>
                       )}

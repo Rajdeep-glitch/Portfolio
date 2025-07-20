@@ -9,7 +9,8 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Rajdeep Roy | Full Stack Developer",
   description: "Portfolio website of Rajdeep Roy, a Full Stack Developer and Computer Science student",
-    generator: 'v0.dev'
+  generator: 'v0.dev',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=5'
 }
 
 export default function RootLayout({
